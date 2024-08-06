@@ -1,28 +1,28 @@
-class Solution {
-    public int[] getConcatenation(int[] nums) {
-        int answer[] = new int[2*nums.length];
-        for(int i=0;i<nums.length;i++){
-            answer[i]=nums[i];
-        }
-        int index = nums.length;
-        for(int i=0;i<nums.length;i++){
-            answer[index]=nums[i];
-            index++;
-        }
-        return answer;
-    }
-}
+// class Solution {
+//     public int[] getConcatenation(int[] nums) {
+//         int answer[] = new int[2*nums.length];
+//         for(int i=0;i<nums.length;i++){
+//             answer[i]=nums[i];
+//         }
+//         int index = nums.length;
+//         for(int i=0;i<nums.length;i++){
+//             answer[index]=nums[i];
+//             index++;
+//         }
+//         return answer;
+//     }
+// }
 
 //Another answer
 
-// class Solution {
-//     public int[] getConcatenation(int[] nums) {
-//         int len = nums.length;
-//         int[] ans = new int[2*len];
-//         for(int i = 0; i < len; i++){
-//             ans[i] = nums[i];
-//             ans[i+len] = nums[i];
-//         }
-//         return ans;
-//     }
-// }
+class Solution {
+    public int[] getConcatenation(int[] nums) {
+        int len = nums.length;
+        int[] ans = new int[2*len];
+        for(int i = 0; i < len; i++){
+            ans[i] = nums[i];
+            ans[i+len] = nums[i];
+        }
+        return ans;
+    }
+}
