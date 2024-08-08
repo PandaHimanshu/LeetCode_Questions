@@ -1,22 +1,20 @@
 class Solution {
     public String reverseWords(String s) {
-        // Trim the string to remove leading and trailing spaces
+        // Trim leading and trailing spaces
         s = s.trim();
         
         // Split the string by one or more spaces
         String[] words = s.split("\\s+");
         
-        // Use two pointers to reverse the words in-place
-        int left = 0, right = words.length - 1;
-        while (left < right) {
-            String temp = words[left];
-            words[left] = words[right];
-            words[right] = temp;
-            left++;
-            right--;
+        // Reverse the order of the words
+        StringBuilder reversed = new StringBuilder();
+        for (int i = words.length - 1; i >= 0; i--) {
+            reversed.append(words[i]);
+            if (i != 0) {
+                reversed.append(" ");
+            }
         }
         
-        // Join the reversed words with a single space
-        return String.join(" ", words);
+        return reversed.toString();
     }
 }
